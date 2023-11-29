@@ -45,3 +45,11 @@ Este aplicativo é um projeto comemorativo e destina-se a facilitar o acesso às
    <a align="left" href="https://linkedin.com/in/renancruz7"/>
      <img align="left" src="https://img.shields.io/badge/LinkedIn-4b369f?style=for-the-badge&logo=linkedin&logoColor=white"/>
    </a>
+<br><br>
+<h3 align="left">Vitor Tuler</h3>
+   <a align="left" href="https://github.com/vitor-tuler" />
+      <img align="left" src="https://img.shields.io/badge/GitHub-4b369f?style=for-the-badge&logo=github&logoColor=white" />
+   </a>
+   <a align="left" href="https://linkedin.com/in/vitor-tuler-anizio"/>
+     <img align="left" src="https://img.shields.io/badge/LinkedIn-4b369f?style=for-the-badge&logo=linkedin&logoColor=white"/>
+   </a>
