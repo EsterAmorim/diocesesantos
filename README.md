@@ -1,12 +1,10 @@
 # Diocese
-**Nome do Aplicativo: Celebrando 100 Anos - Diocese Santos**
+**Nome do Aplicativo: Diocese Santos**
 
-**Descrição:**
-O aplicativo "Celebrando 100 Anos - Diocese Santos" foi desenvolvido em Flutter para marcar o centenário da Diocese Santos, proporcionando aos usuários uma maneira fácil e interativa de encontrar informações sobre paróquias e horários de missa na Baixada Santista. Com uma interface intuitiva, o aplicativo é uma ferramenta útil para fiéis e interessados em participar das celebrações religiosas na região.
+O aplicativo "Diocese Santos" foi desenvolvido em Flutter para marcar o centenário da Diocese Santos, proporcionando aos usuários uma maneira fácil e interativa de encontrar informações sobre paróquias e horários de missa na Baixada Santista. Com uma interface intuitiva, o aplicativo é uma ferramenta útil para fiéis e interessados em participar das celebrações religiosas na região.
 
 **Principais Funcionalidades:**
-1. **Consulta por Cidade:** Os usuários podem inserir o nome de uma cidade da Baixada Santista para acessar informações específicas sobre as paróquias localizadas na área.
-
+1. **Consulta por Cidade:** Os usuários podem inserir o nome de uma cidade da Baixada Santista para acessar informações específicas sobre as paróquias localizadas na área
 2. **Detalhes da Paróquia:** Para cada paróquia listada, o aplicativo fornece informações detalhadas, incluindo endereço, contato e histórico, oferecendo uma visão abrangente da presença da Diocese na região.
 
 3. **Horários de Missa:** Os horários de missa para cada paróquia são facilmente acessíveis, permitindo que os usuários planejem sua participação nas celebrações de acordo com sua disponibilidade.
