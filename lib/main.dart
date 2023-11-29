@@ -1,6 +1,21 @@
+import 'package:diocese/map_page.dart';
 import 'package:flutter/material.dart';
+//import 'package:MapaPage/pages/MapaPage.dart';
+import 'package:flutter_config/flutter_config.dart';
+//import 'package:provider/provider.dart';
 
-void main() => runApp(App());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterConfig.loadEnvVariables();
+
+  runApp(App()
+//ChangeNotifierProvider<PostosRepository>(
+//create: (_) => PostosRepository(),
+//child: App(),
+//  ),
+  );
+}
 
 class App extends StatelessWidget {
   @override
@@ -13,20 +28,16 @@ class App extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(1, 0, 86, 179)),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: MapPage(),
     );
   }
 }
-
-class HomePage extends StatelessWidget {
+/*class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Diocese Santos"),
-        actions: <Widget>[
-          Icon(Icons.plus_one),
-        ],
       ),
       body: Container(
         child: Center(child: Text("Olá mundo"),
@@ -34,4 +45,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-}
+}*/
