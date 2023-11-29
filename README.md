@@ -19,7 +19,7 @@ Se você deseja contribuir para o desenvolvimento deste aplicativo, sinta-se à 
 
 # Wiki
 
-[Wiki](https://github.com/EsterAmorim/diocesesantos.wiki.git)
+[Wiki](https://github.com/EsterAmorim/diocesesantos/wiki)
 
 
 # Colaboradores
