@@ -62,6 +62,7 @@ class _MapPageState extends State<MapPage> {
                   myLocationEnabled: true,
                   myLocationButtonEnabled: true,
                   onMapCreated: local.onMapCreated,
+                  markers: local.markers,
                 );
               }),
             ),

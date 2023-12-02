@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'package:diocese/repositories/igrejas_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -7,6 +8,7 @@ class CidadesController extends ChangeNotifier{
   double lat = 0.0;
   double long = 0.0;
   String erro = '';
+  Set<Marker> markers = Set<Marker>();
   late GoogleMapController _mapsController;
 
   CidadesController(){
@@ -21,8 +23,18 @@ class CidadesController extends ChangeNotifier{
     loadIgrejas();
   }
 
+  //Chamada a API ou backend Artificial
   loadIgrejas(){
-
+    final igrejas = IgrejasRepository().paroquia;
+    igrejas.forEach((igreja) {
+      markers.add(Marker(
+          markerId: MarkerId(igreja.nome),
+          position: LatLng(igreja.latitude, igreja.longitude),
+          onTap: () => {}
+          ),
+        );
+    });
+    notifyListeners();
   }
   getPosition() async {
     try {

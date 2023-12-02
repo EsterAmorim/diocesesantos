@@ -10,8 +10,8 @@ class IgrejasRepository extends ChangeNotifier {
       horario: "",
       foto:
       'https://lh5.googleusercontent.com/p/AF1QipP_xnSi5-sp9slSuMpSx-JlmvwvHGL1VJ_JcOGX=w408-h306-k-no',
-      latitude: -25.4361979,
-      longitude: -49.2624613,
+      latitude: -23.935319583992616,
+      longitude: -46.28579391464741,
     ),
     Paroquia(
       nome: 'Auto Posto Rodoviária',
