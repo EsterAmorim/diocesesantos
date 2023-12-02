@@ -15,12 +15,15 @@ class CidadesController extends ChangeNotifier{
 
   get mapsController => _mapsController;
 
-
   onMapCreated(GoogleMapController gmc) async{
     _mapsController = gmc;
     getPosition();
+    loadIgrejas();
   }
 
+  loadIgrejas(){
+
+  }
   getPosition() async {
     try {
       Position posicao = await _posicaoAtual();
@@ -28,6 +31,7 @@ class CidadesController extends ChangeNotifier{
       long = posicao.longitude;
       print(posicao.latitude);
       print(posicao.longitude);
+      _mapsController.animateCamera(CameraUpdate.newLatLng(LatLng(lat, long)));
     } catch (e){
       erro = e.toString();
     }
