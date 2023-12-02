@@ -1,5 +1,7 @@
 import 'dart:ffi';
+import 'package:diocese/pages/map_page.dart';
 import 'package:diocese/repositories/igrejas_repository.dart';
+import 'package:diocese/widgets/igreja_detalhes.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -10,11 +12,11 @@ class CidadesController extends ChangeNotifier{
   String erro = '';
   Set<Marker> markers = Set<Marker>();
   late GoogleMapController _mapsController;
-
+/*
   CidadesController(){
     getPosition();
   }
-
+*/
   get mapsController => _mapsController;
 
   onMapCreated(GoogleMapController gmc) async{
@@ -26,11 +28,15 @@ class CidadesController extends ChangeNotifier{
   //Chamada a API ou backend Artificial
   loadIgrejas(){
     final igrejas = IgrejasRepository().paroquia;
-    igrejas.forEach((igreja) {
+    igrejas.forEach((igreja) async {
       markers.add(Marker(
           markerId: MarkerId(igreja.nome),
-          position: LatLng(igreja.latitude, igreja.longitude),
-          onTap: () => {}
+          position: LatLng(igreja.latitude, igreja.longitude,),
+          //icon: await BitmapDescriptor.fromAssetImage(const ImageConfiguration(), 'assets/church.png'),
+          onTap: () => {
+            showModalBottomSheet(context: appKey.currentState!.context,
+                builder: (context) => IgrejasDetalhes(paroquia: igreja))
+          }
           ),
         );
     });
@@ -41,8 +47,6 @@ class CidadesController extends ChangeNotifier{
       Position posicao = await _posicaoAtual();
       lat = posicao.latitude;
       long = posicao.longitude;
-      print(posicao.latitude);
-      print(posicao.longitude);
       _mapsController.animateCamera(CameraUpdate.newLatLng(LatLng(lat, long)));
     } catch (e){
       erro = e.toString();

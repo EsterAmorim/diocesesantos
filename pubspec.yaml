@@ -67,6 +67,8 @@ flutter:
     - assets/diocese.png
     - assets/more_vert.png
     - assets/lupa.png
+    - assets/igreja.png
+    - assets/church.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
