@@ -17,8 +17,7 @@ class _MapPageState extends State<MapPage> {
       appBar: AppBar(
         actions: [
           GestureDetector(
-            onTap: () {
-            },
+            onTap: () {},
             child: Image.asset(
               'assets/more_vert.png',
               fit: BoxFit.cover,
@@ -31,23 +30,44 @@ class _MapPageState extends State<MapPage> {
         leading: Image.asset('assets/diocese.png', height: 36, width: 36),
         backgroundColor: Colors.blueAccent,
       ),
-      body: ChangeNotifierProvider<CidadesController>(
-        create: (context) => CidadesController(),
-        child: Builder(builder: (context){
-          final local = context.watch<CidadesController>();
-
-          return GoogleMap(initialCameraPosition: CameraPosition(
-            target: LatLng(local.lat,local.long),
-            zoom: 18,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                filled: true,
+                hintStyle: TextStyle(color: Colors.grey[800]),
+                hintText: "Digite a paróquia",
+                fillColor: Colors.white70,
+                suffixIcon: Icon(Icons.search),
+              ),
+            ),
           ),
-            mapType: MapType.normal,
-            myLocationEnabled: true,
-            myLocationButtonEnabled: true,
-            onMapCreated: local.onMapCreated,
-          );
-        }),
+          Expanded(
+            child: ChangeNotifierProvider<CidadesController>(
+              create: (context) => CidadesController(),
+              child: Builder(builder: (context) {
+                final local = context.watch<CidadesController>();
+
+                return GoogleMap(
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(local.lat, local.long),
+                    zoom: 18,
+                  ),
+                  mapType: MapType.normal,
+                  myLocationEnabled: true,
+                  myLocationButtonEnabled: true,
+                  onMapCreated: local.onMapCreated,
+                );
+              }),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
