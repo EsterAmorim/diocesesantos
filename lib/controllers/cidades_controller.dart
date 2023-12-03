@@ -26,22 +26,29 @@ class CidadesController extends ChangeNotifier{
   }
 
   //Chamada a API ou backend Artificial
-  loadIgrejas(){
+  loadIgrejas()  {
     final igrejas = IgrejasRepository().paroquia;
     igrejas.forEach((igreja) async {
-      markers.add(Marker(
+      markers.add(
+        Marker(
           markerId: MarkerId(igreja.nome),
-          position: LatLng(igreja.latitude, igreja.longitude,),
-          //icon: await BitmapDescriptor.fromAssetImage(const ImageConfiguration(), 'assets/church.png'),
-          onTap: () => {
-            showModalBottomSheet(context: appKey.currentState!.context,
-                builder: (context) => IgrejasDetalhes(paroquia: igreja))
-          }
+          position: LatLng(igreja.latitude, igreja.longitude),
+          icon: await BitmapDescriptor.fromAssetImage(
+            ImageConfiguration(),
+            'assets/igreja.png',
           ),
-        );
+          onTap: () => {showModalBottomSheet(
+            context: appKey.currentState!.context,
+            builder: (context) => IgrejasDetalhes(paroquia: igreja),
+          )
+          },
+        ),
+      );
     });
     notifyListeners();
   }
+
+
   getPosition() async {
     try {
       Position posicao = await _posicaoAtual();

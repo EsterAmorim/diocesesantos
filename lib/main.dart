@@ -1,20 +1,23 @@
 import 'package:diocese/pages/map_page.dart';
+import 'package:diocese/repositories/igrejas_repository.dart';
 import 'package:flutter/material.dart';
 //import 'package:MapaPage/pages/MapaPage.dart';
 import 'package:flutter_config/flutter_config.dart';
+import 'package:provider/provider.dart';
 //import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterConfig.loadEnvVariables();
 
-  runApp(App()
-//ChangeNotifierProvider<PostosRepository>(
-//create: (_) => PostosRepository(),
-//child: App(),
-//  ),
+  runApp(
+    ChangeNotifierProvider<IgrejasRepository>(
+      create: (_) => IgrejasRepository(),
+      child: App(),
+    ),
   );
 }
+
 
 class App extends StatelessWidget {
   @override

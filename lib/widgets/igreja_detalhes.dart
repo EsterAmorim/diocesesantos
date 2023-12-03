@@ -9,24 +9,25 @@ class IgrejasDetalhes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 350,
       child: Wrap(
         children: [
           Image.network(paroquia.foto,
-              height: 250,
+              height: 300,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover),
           Padding(
-            padding: EdgeInsets.only(top: 24, left: 24),
+            padding: const EdgeInsets.only(top: 24, left: 24),
             child: Text(
               paroquia.nome,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 60, left: 24),
+            padding: const EdgeInsets.only(bottom: 60, left: 24),
             child: Text(
               paroquia.endereco,
             ),

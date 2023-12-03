@@ -5,17 +5,11 @@ import 'package:provider/provider.dart';
 
 final appKey = GlobalKey();
 
-class MapPage extends StatefulWidget {
-  const MapPage({super.key});
-
-  @override
-  State<MapPage> createState() => _MapPageState();
-}
-
-class _MapPageState extends State<MapPage> {
+class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: appKey,
       appBar: AppBar(
         actions: [
           GestureDetector(
@@ -60,11 +54,13 @@ class _MapPageState extends State<MapPage> {
                     target: LatLng(local.lat, local.long),
                     zoom: 18,
                   ),
+                  zoomControlsEnabled: false,
                   mapType: MapType.normal,
                   myLocationEnabled: true,
                   myLocationButtonEnabled: true,
                   onMapCreated: local.onMapCreated,
                   markers: local.markers,
+                  mapToolbarEnabled: false,
                 );
               }),
             ),
