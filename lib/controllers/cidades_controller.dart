@@ -33,10 +33,12 @@ class CidadesController extends ChangeNotifier{
         Marker(
           markerId: MarkerId(igreja.nome),
           position: LatLng(igreja.latitude, igreja.longitude),
+          /*
           icon: await BitmapDescriptor.fromAssetImage(
             ImageConfiguration(),
             'assets/igreja.png',
           ),
+          */
           onTap: () => {showModalBottomSheet(
             context: appKey.currentState!.context,
             builder: (context) => IgrejasDetalhes(paroquia: igreja),

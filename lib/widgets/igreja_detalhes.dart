@@ -9,11 +9,11 @@ class IgrejasDetalhes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 350,
+      height: 420,
       child: Wrap(
         children: [
           Image.network(paroquia.foto,
-              height: 300,
+              height: 150,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover),
           Padding(
@@ -21,7 +21,7 @@ class IgrejasDetalhes extends StatelessWidget {
             child: Text(
               paroquia.nome,
               style: const TextStyle(
-                fontSize: 26,
+                fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -30,6 +30,15 @@ class IgrejasDetalhes extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 60, left: 24),
             child: Text(
               paroquia.endereco,
+              style: const TextStyle(
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 35, left: 24),
+            child: Text(
+              paroquia.horario,
             ),
           ),
         ],
